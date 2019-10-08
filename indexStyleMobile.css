@@ -1,0 +1,1008 @@
+body{
+background:rgb(221, 205, 60);
+background-size: cover;
+background-position: center;
+font-family:  "Century Gothic";
+
+/*animation-name: change;
+animation-duration: 64s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;*/
+}
+
+textarea{
+    width: 600px;
+    height: 300px;
+    font-size: 40px;
+}
+a img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:700px;
+    height:650px;
+    margin-top: -550px;
+    margin-left: -330px;
+    
+}
+p{
+    top:60%;
+    left:50%;
+    position: absolute;
+    color:black;
+    animation: changecolor 5s  linear infinite;
+    margin-top:-105px;
+    font-size:40px;
+
+}
+i{
+    font-size: 100px;
+}
+.blue{
+    
+    width:80%;
+    height:80%;
+    animation: redchange 6s 0s infinite ease-in-out;
+    border-left: rgb(207, 17, 17) 6px solid ;
+    border-bottom: rgb(255, 255, 255) 6px solid ;
+    border-right: rgb(16, 86, 192) 6px solid ;
+    border-top: black 6px solid ;
+    position: absolute;
+    margin: 100px 100px;
+    
+}
+.scouticon{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top: -40px;
+    margin-left: -250px;
+ 
+}
+
+.scouticon img{
+    width: 200px;
+    margin-left: -100px;
+}
+
+.scouticon h1{
+    margin-top: -135px;
+    margin-left: 180px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: rgb(9, 162, 223);
+    font-size: 50px;
+}
+
+.scouticon hh{
+    margin-top: 25px;
+    margin-left: -18px;
+    position: absolute;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color:black;
+    font-style: italic;
+    font-size: 50px;
+}
+
+.scouticon h2{
+    position: absolute;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: rgb(9, 162, 223);
+    font-size: 50px;
+    margin-left: 180px;
+    margin-top: -50px;
+}
+
+@keyframes redchange{
+    0%{border-left-color: rgb(207, 17, 17);
+     border-bottom-color: rgb(255, 255, 255);
+    border-right-color: rgb(16, 86, 192)}
+
+	33%{border-left-color: rgb(16, 86, 192);
+     border-bottom-color: rgb(207, 17, 17);
+    border-right-color: rgb(255, 255, 255)}
+
+	66%{border-left-color: rgb(255, 255, 255);
+     border-bottom-color: rgb(16, 86, 192);
+    border-right-color: rgb(207, 17, 17)}
+
+	100%{border-left-color: rgb(207, 17, 17);
+     border-bottom-color: rgb(255, 255, 255);
+    border-right-color: rgb(16, 86, 192)}
+	
+}
+
+/*--------------End of Home page---------------*/
+
+#sidebar{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background: rgb(172, 74, 74);
+    transition: .3s linear;
+    color:rgb(233, 164, 16);
+                text-align: center;
+                font-size:30px;
+                overflow-y:scroll;
+                height:150%;
+}
+
+#chooseteam{
+    position: absolute;
+    width: 50%;
+    height:100%;
+    background: rgb(172, 74, 74);
+    left:-50%;
+    
+    transition: .3s linear;
+}
+
+#sidebar ul li{
+    color: white;
+    list-style: none;
+    
+    background-color:  rgb(172, 74, 74);
+   
+}
+
+#sidebar .checkStyle input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+	padding-right: 0.2em;
+  padding-left: .1em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+#sidebar .checkStyle input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+#sidebar .checkStyle input[type=checkbox] {
+  display:none;
+}
+
+#sidebar .checkStyle input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+#sidebar .checkStyle input[type=checkbox]:checked + label:before {
+  background-color: MediumSeaGreen;
+  border-color: MediumSeaGreen;
+  color: #fff;
+}
+
+#sidebar .checkStyle input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+#sidebar .checkStyle input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+.login{
+   text-align: center;
+    transition: .3s;
+     border: 4px solid rgb(233, 164, 16);
+     margin:10px;
+     margin-top:200px;
+}
+
+.login input[type='checkbox']{
+    margin-top: 20px;
+}
+
+.login i{
+    color:#aaa;
+    border: 1px solid rgb(233, 164, 16);
+}
+
+.login input{
+    border: 2px #aaa solid;
+    width: 450px;
+    height:70px;
+    margin-top: 20px;
+    background-color: #87CEFA;
+    transition: .2s;
+    font-size:30px;
+    
+}
+
+.login input:focus + i{
+            color:#87CEFA;
+          }
+.login input:focus{
+    background-color: white;
+}     
+
+.login button{
+    background-color: rgb(188, 223, 32);
+    border-radius: 20px;
+    margin-top:20px;
+    width: 180px;
+    height: 85px;
+    margin-left:-20px;
+    font-size:40px;
+     padding-right:15px;
+}
+
+.login button:hover{
+    background-color:#87CEFA;
+}
+
+
+
+.signup{
+    text-align: center;
+    transition: .3s;
+     border: 4px solid rgb(233, 164, 16);
+     margin:10px;
+     margin-top:30px;
+}
+
+.signup input[type='checkbox']{
+    margin-top: 20px;
+}
+
+.signup i{
+    color:#aaa;
+    border: 1px solid rgb(233, 164, 16);
+}
+
+.signup input{
+    border: 2px #aaa solid;
+    width: 450px;
+    height:70px;
+    margin-top: 20px;
+    background-color: #87CEFA;
+    transition: .2s;
+    font-size:30px;
+}
+
+.signup input:focus + i{
+            color:#87CEFA;
+          }
+.signup input:focus{
+    background-color: white;
+}     
+
+.signup button{
+    background-color: rgb(188, 223, 32);
+    border-radius: 20px;
+    margin-top:20px;
+    width: 180px;
+    height: 85px;
+    margin-left:-20px;
+    font-size:40px;
+    padding-right:15px;
+}
+
+.buttons{
+    background-color:rgb(172, 74, 74);
+    
+}
+
+.buttons button{
+    margin-left: 100px;
+     background-color: rgb(188, 223, 32);
+    border-radius: 20px;
+    margin-top:20px;
+    width: 180px;
+    height: 85px;
+    font-size:30px;
+    padding-right:15px;
+}
+
+.signup button:hover{
+    background-color:#87CEFA;
+}
+
+::-webkit-scrollbar{
+    width:6px;
+    background-color:#a6a6a6;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color:rgb(12, 129, 202);
+}
+
+.signuperror {
+ 
+  font-family: arial;
+  font-size: 26px;
+  color: red;
+  text-align: center;
+  animation: changecolor 5s 0s linear infinite;
+}
+
+.signupsuccess {
+  padding-top: 14px;
+  font-family: arial;
+  font-size: 23px;
+  color: rgb(114, 189, 2);
+  animation: changecolor 0.5s 0s linear infinite;
+  text-align: center;
+}
+
+@keyframes changecolor{
+	0%{
+		color:rgb(247, 10, 10);
+	}
+	25%{
+		color: rgb(25, 127, 196);
+    }
+    50%{
+        color: rgb(10, 163, 22);
+    }
+    75%{
+        color: rgb(255, 255, 255);
+    }
+
+    100%{
+        color:black;
+    }
+
+}
+
+/*------------end of team page-------*/
+
+th{
+    text-align: center;
+    font-size: 40px;
+}
+
+ table,th,td{
+    border: 1px solid #2f3640;
+    /*border-collapse: collapse;*/
+}
+
+tr:nth-child(1){
+    background-color: rgb(111, 164, 233);
+}
+ tr:nth-child(even){
+    background-color: #fff;
+}
+
+ tr:nth-child(odd){
+    background-color: rgb(149, 223, 106);
+}
+
+#explorepage{
+    background:rgb(223, 122, 6);
+    position: absolute;
+    width:100%;
+    height:100%;  
+    overflow-y: scroll;
+    transition:.2s;
+    
+}
+
+#explorepage.active{
+    top:50%;
+    opacity: 1;
+}
+
+#explorepage i{
+    font-size: 33px;
+    color: black;
+    transition: .2s;
+    opacity: 1;
+}
+#explorepage i:hover{
+    
+    color: white;
+}
+#explorepage .search-box{
+    background: #2f3640;
+    height:100px;
+    border-radius:40px;
+    padding:5px;
+    width: 450px;
+    margin-left: 20%;
+    margin-top:150px;
+}
+#explorepage .search-btn{
+    color: #e84118;
+    float:right;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border-width: 2px;
+    margin-top:-60px;
+    background: #2f3640;
+    border-color: #e84118;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+#explorepage .search-btn i{
+     margin-left: -30px;
+    font-size:70px;
+}
+#explorepage .search-txt-ex{
+    border:none;
+    background:none;
+    outline: none;
+    float: left;
+    padding: 0;
+    border-radius:20px;
+    color: white;
+    font-size: 50px;
+    transition: 0.2s;
+    line-height: 50px;
+    margin-top:20px;
+    width: 450px;
+    height: 70px;
+}
+
+#explorepage .search-txt:focus {
+    box-shadow: 0 0 2px 2px red;
+}
+
+#explorepage .rank select{
+    background: blueviolet;
+    color: #fff;
+    width: 400px;
+    height: 80px;
+    margin-left: 20%;
+    border: none;
+    font-size: 40px;
+    border-radius: 30px;
+    box-shadow: 0 0 3px red;
+    outline: none;
+    padding: 5px;
+}
+
+#explorepage .team{
+    position: absolute;
+    background:rgb(223, 122, 6);
+    width: 180px;
+    height: 105px;
+    border-radius:40px;
+    padding:5px;
+    
+    margin-left: 280px;
+    margin-top:10px;
+    font-size: 40px;
+    transition: .2s;
+}
+
+#explorepage .team:hover{
+    background:white;
+}
+
+#explorepage .match:hover{
+    background:white;
+}
+
+#explorepage .match{
+    position: absolute;
+    background: rgb(206, 20, 60);
+    width: 180px;
+    height: 105px;
+    border-radius:40px;
+    padding:5px;
+    
+    margin-right: 10%;
+    margin-top:10px;
+    font-size: 40px;
+}
+
+#explorepage .bluea:hover{
+    background:white;
+}
+
+#explorepage .bluea{
+    position: absolute;
+    background: rgb(18, 140, 211);
+    width: 180px;
+    height: 105px;
+    border-radius:40px;
+    padding:15px;
+    
+    margin-left: 540px;
+    margin-top:10px;
+    font-size: 30px;
+}
+
+#explorepage .matchpage{
+    background: rgb(206, 20, 60);
+    
+}
+#explorepage #download_team i{
+    color:rgb(71, 105, 3);
+    font-size: 100px;
+    margin-left: 600px;
+    margin-top: 140px;
+}
+
+#explorepage #download_team i:hover{
+    color:white;
+}
+#explorepage .rank2 select{
+    background: blueviolet;
+    color: #fff;
+    width: 400px;
+    height: 80px;
+    margin-left: 15%;
+    transform: translateY(150px);
+    border: none;
+    font-size: 45px;
+    border-radius: 30px;
+    box-shadow: 0 0 3px red;
+    outline: none;
+    padding: 5px;
+}
+
+#display_match_rank{
+    margin-top:170px;
+    overflow-x:scroll;
+}
+
+
+.table1{
+    width: 10%;
+    margin-left: 0%;
+    margin-top:30px;
+}
+
+.table1{
+    width: 60%;
+    margin-left: 0%;
+    margin-top:30px;
+}
+
+#explorepage iframe{
+     width: 100%;
+    margin-left: 0%;
+    margin-top:120px;
+    height:100%;
+}
+
+#explorepage .close i{
+    display:none;
+}
+/*----------------end of explore page----------*/
+
+#editpass{
+    top:50%; /*50%*/
+    left:50%;
+    background:rgb(19, 92, 187);
+    position: absolute;
+    width:600px;
+    height:600px;
+    border: 2px solid white;
+    overflow-y: scroll;
+    margin-left: -30%;/*-500px;*/
+    transition:.2s;
+    margin-top:-300px;
+    text-align: center;
+}
+#editpass input{
+     border: 2px #aaa solid;
+    width: 450px;
+    height:70px;
+    margin-top: 20px;
+    background-color: #87CEFA;
+    transition: .2s;
+    font-size:30px;
+   
+}
+
+#editpass input:focus + i{
+            color:#87CEFA;
+          }
+#editpass input:focus{
+    background-color: white;
+}     
+
+#editpass input:hover{
+    
+    background-color: white;
+}    
+
+#editpass input[type="submit"]{
+    background-color: #aaa;
+    width: 130px;
+    border: #e84118 solid 2px;
+    border-radius: 30%;
+    margin-left: 3%;
+}
+
+button{
+    background-color: #aaa;
+    width: 330px;
+    height: 100px;
+    border: #e84118 solid 2px;
+    border-radius: 30%;
+    margin-left: 3%;
+    font-size: 40px;
+}
+
+button:hover{
+    background-color: white;
+}
+#editpass input[type="submit"]:hover{
+    background-color: white;
+}    
+
+#editpass i{
+    
+    
+    font-size: 80px;
+    color: black;
+    transition: .2s;
+    opacity: 1;
+    
+    
+}
+
+#editpass i:hover{
+    
+    color: white;
+}
+#editpass.active{
+    left:50%;
+    opacity: 1;
+}
+
+#editpage{
+    top:-100%; /*50%*/
+    left:0%;
+    background:rgb(179, 26, 158);
+    position: absolute;
+    width:100%;
+    height:100%;
+    border: 2px solid white;
+    overflow-y: scroll;
+   /*-500px;*/
+    transition:.2s;
+    
+    /*opacity: 0;*/
+    display:inline;
+}
+
+#editpage.active{
+    top:-100%;
+    /*opacity: 1;*/
+}
+
+ #editpage{
+        top:0%;
+    }
+                    #editpage input[type="submit"]{
+                        background-color: rgb(188, 223, 32);
+                        border-radius: 20px;
+                        margin-top:20px;
+                        width: 180px;
+                        height: 135px;
+                        margin-left:-20px;
+                        font-size: 35px;
+                        
+                    }
+
+                    #editpage input[type="submit"]{
+                        margin-left:5px;
+                        transform: translateY(110px);
+                    }
+
+                    #editpage input[type="submit"]:hover{
+                        background-color:#87CEFA;
+                    }
+
+                    #editpage input[name="addTeam"]{
+                        width: 200px;
+                        margin-top:-135px;
+                        margin-left:235px;
+                        background-color:#87CEFA;
+                        position: absolute;
+                    }
+
+                    #editpage input[name="addTeam"]:hover{
+                        background-color:rgb(188, 223, 32);
+                    }
+                     #editpage input[name="addMatch"]{
+                        margin-top:-135px;
+                        margin-left:455px;
+                        background-color:#87CEFA;
+                        width: 300px;
+                        position: absolute;
+                    }
+
+                    #editpage input[name="addMatch"]:hover{
+                        background-color:rgb(188, 223, 32);
+                    }
+                     #iconbutton_ed:hover{
+                color:white;
+            }
+
+            #iconbutton_ed i{
+                 font-size:100px;
+            }
+
+#iconbutton_ed:hover{
+    color:white;
+}
+
+#editpage #iconbutton_ed i{
+    font-size:100px;
+}
+
+#iconbutton:hover{
+    color:white;
+}
+
+#editpage #iconbutton i{
+    font-size:100px;
+}
+#editpage2{
+    background:rgb(179, 26, 158);
+    position: absolute;
+    width:100%;
+    height:100%;
+    border: 2px solid white;
+    overflow-y: scroll;
+    top:0%;
+    transition:.2s;
+    left: 0%;
+    display:inline;
+}
+
+#editpage2.active{
+    top:-100%;
+}
+
+#iconbutton:hover{
+    color:white;
+}
+
+#editpage2 input[type="submit"]{
+                        background-color: rgb(188, 223, 32);
+                        border-radius: 20px;
+                        margin-top:20px;
+                        width: 180px;
+                        height: 135px;
+                        margin-left:-20px;
+                        font-size: 35px;
+                    }
+
+                    #editpage2 input[type="submit"]{
+                        margin-left:5px;
+                        transform: translateY(110px);
+                    }
+
+                    #editpage2 input[type="submit"]:hover{
+                        background-color:#87CEFA;
+                    }
+
+                    #editpage2 input[name="addTeam"]{
+                        width: 200px;
+                        margin-top:-135px;
+                        margin-left:235px;
+                        background-color:#87CEFA;
+                        position: absolute;
+                    }
+                    #editpage2 input[name="addTeam"]:hover{
+                        background-color:rgb(188, 223, 32);
+                    }
+
+                    #editpage2 input[name="addMatch"]{
+                        margin-top:-135px;
+                        margin-left:455px;
+                        background-color:#87CEFA;
+                        width: 300px;
+                        position: absolute;
+                    }
+
+                    #editpage2 input[name="addMatch"]:hover{
+                        background-color:rgb(188, 223, 32);
+                    }
+
+#editteaminfo2 input[name="changevalue"]{
+    background-color:#87CEFA;
+    width: 400px;
+    height: 100px;
+    font-size: 30px;
+}
+
+        #editteaminfo2{
+    background:rgb(179, 26, 158);
+    position: absolute;
+    width:100%;
+    height:100%;
+    margin-top:-10%;
+    border: 2px solid white;
+    overflow-y: scroll;
+    transition:.2s;
+    text-align:center;
+        }
+        
+   #editteaminfo2 i{
+       font-size:100px;
+   }   
+   #editteaminfo2 h4{
+       font-size: 60px;
+   }
+   #editteaminfo2 h5{
+       font-size: 60px;
+   }
+   #editteaminfo2 i:hover{
+       color:white;
+   }  
+
+  #editteaminfo2 a{
+       font-size: 35px;
+   }
+   
+   #editteaminfo2.active{
+       display:none;
+   }
+
+
+   #editteaminfo2 input{
+     border: 2px #aaa solid;
+    width: 385px;
+    height:100px;
+    margin-top: -50px;
+    background-color: #87CEFA;
+    padding: 5px;
+    margin-left:5px;
+    transition: .2s;
+    font-size: 40px;
+}
+
+#editteaminfo2 input:focus + i{
+            color:#87CEFA;
+          }
+#editteaminfo2 input:focus{
+    background-color: white;
+}     
+
+#editteaminfo2 input[type="submit"]{
+    background-color: rgb(188, 223, 32);
+    border-radius: 20px;
+    margin-top:20px;
+    width: 180px;
+    height: 135px;
+    margin-left:-20px;
+    font-size: 40px;
+}
+
+#editteaminfo2 input[type="submit"]:hover{
+    background-color:#87CEFA;
+}
+
+#editteaminfo2 #change{
+    width:95px;
+}
+
+#editpage.active{
+    top:0%;
+}
+#editteaminfo2 select{
+    background: blueviolet;
+    color: #fff;
+    width: 400px;
+    height: 80px;
+    margin-left:0%;
+    border: none;
+    font-size: 45px;
+    border-radius: 30px;
+    box-shadow: 0 0 3px red;
+    outline: none;
+    padding: 5px;
+    margin-top:-85px;
+}
+
+.cargolvl1{
+    margin-left: -790px;
+    margin-top: -40px;
+    transform: translateY(-290px);
+    text-align:center;
+}
+.cargolvl2{
+    margin-left: -790px;
+    margin-top: -40px;
+    transform: translateY(-620px);
+    text-align:center;
+}
+.cargolvl3{
+    margin-left: -790px;
+    margin-top: -40px;
+    transform: translateY(-960px);
+    text-align:center;
+}
+
+.hatchlvl1{
+    margin-left: -190px;
+    margin-top: -40px;
+    transform: translateY(-550px);
+    text-align:center;
+}
+.hatchlvl2{
+    margin-left: -190px;
+    margin-top: -40px;
+    transform: translateY(-890px);
+    text-align:center;
+}
+.hatchlvl3{
+    margin-left: -190px;
+    margin-top: -1060px;
+    transform: translateY(-200px);
+    text-align:center;
+}
+.hatchship{
+    margin-left: 320px;
+    margin-top:-10px;
+    transform: translateY(120px);
+    text-align:center;
+}
+.cargoship{
+    margin-left: 320px;   
+    transform: translateY(-240px);
+    text-align:center;
+}
+#editteaminfo2 input[name="cargolvl1"]{
+    transform: translateX(160px);
+    width: 105px;
+    border-radius: 60px;
+}
+#editteaminfo2 input[name="cargolvl2"]{
+    transform: translateX(160px);
+    width: 105px;
+    border-radius: 60px;
+}
+#editteaminfo2 input[name="cargolvl3"]{
+    transform: translateX(160px);
+    width: 105px;
+    border-radius: 60px;
+}
+#editteaminfo2 input[name="hatchlvl1"]{
+    border-radius: 60px;
+    width: 105px;
+}
+#editteaminfo2 input[name="hatchlvl2"]{
+    width: 105px;
+    border-radius: 60px;
+}
+#editteaminfo2 input[name="hatchlvl3"]{
+    width: 105px;
+    border-radius: 60px;
+}
+#editteaminfo2 input[name="hatchship"]{
+    width: 105px;
+    border-radius: 60px;
+}
+#editteaminfo2 input[name="cargoship"]{
+    width: 105px;
+    border-radius: 60px;
+}
+
+#rocketimg{
+    margin-left: -350px;
+}
+
+#shipimg{
+    margin-left: 550px;
+    margin-top: -200px;
+    transform: translateY(180px);
+}
+
+#editteaminfo2 i{
+    color:white;
+}
+#editteaminfo2 i:hover{
+    color:black;
+}

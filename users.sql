@@ -1,0 +1,3 @@
+CREATE TABLE users(
+teamnumber VARCHAR(4) NOT NULL,
+password2 VARCHAR(30) NOT NULL);
