@@ -13,13 +13,17 @@ and can analyze data, rank teams, make charts from data user scout. It
 saved lots of time from putting data in excel then sorting data. It
 worked very well in 2019 season in my [team](https://smblyrequired.com).
 
-#### How do I start
+#### How did I start
 
 There was one night, my robotics mentors were talking about how nice it
 will be if we had a scouting app last year. I heard their talking so I
 jumped in and said I will make one. So that became my new project. I
 made it from scratch using multiple languages. It took me 4 months to
 finish it since I was the only web developer on the team.
+
+The domain **frcscouting.ga** was expired December 8, 2019. So the
+website is on its original domain -
+**[https://frcscouting.000webhostapp.com](https://frcscouting.000webhostapp.com)**.
 
 ### Frontend
 
@@ -31,25 +35,19 @@ However, **I think I comprehended the concept wrong.** The website
 turned out to be an interface with some toggle div, which worked fine
 but you can't call it a single-page website. The code looks like this,
 
-    function toggleMyteam() {
-        document.getElementById("sidebar").classList.toggle('active');
-        document.getElementsByTagName("body").classList.toggle('active');
+    function toggleEdit(cls) {
+        let ele = document.getElementById(cls);
+        ele.classList.toggle('active');
     }
 
-    function toggleExplore() {
-        document.getElementById("explorepage").classList.toggle('active');
+    function toggleChoose(cls) {
+        let ele = document.getElementById(cls);
+        ele.classList.toggle('active');
     }
 
-    function toggleEdit() {
-        document.getElementById("editpass").classList.toggle('active');
-    }
-
-    function toggleChoose() {
-        document.getElementById("chooseteam").classList.toggle('active');
-    }
-
-    function toggleChart() {
-        document.getElementById("chartteam").classList.toggle('active');
+    function toggleChart(cls) {
+        let ele = document.getElementById(cls);
+        ele.classList.toggle('active');
     }
 
                 
@@ -125,10 +123,10 @@ project.
 
 #### Chart.js API
 
-As you see in fronend part of this article, the website is able to
-graphing the data(such as total cargo point) of a specific ability of a
-a specific data(such as total cargo point) in a a specific event. This
-neat graph API is called [chart.js](https://www.chartjs.org/).
+As you see in fronend part of this article, the website can graphing the
+data(such as total cargo point) of a specific ability of a specific
+data(such as total cargo point) in a a specific event. This neat graph
+API is called [chart.js](https://www.chartjs.org/).
 
 **First,** I put `event listener` on each select bar to send value to
 `load_graph(teamNumber, region, data)` method,
@@ -187,7 +185,7 @@ JSON that [chart.js](https://www.chartjs.org/) can read. It responses to
 result.
 
     //query data from database
-    $query = "SELECT * FROM matchperformance WHERE teamnumber='$con1' and region='$con2' ORDER BY `matchperformance`.`matchnumber` ASC ;";
+    $query = /* sql query statement */;
     $result = mysqli_query($conn, $query);
     $result2 = mysqli_query($conn, $query);
 
@@ -196,7 +194,8 @@ result.
     }
 
     while ($row2 = mysqli_fetch_array($result2)) {
-        $data2 = $data2 . '"Match '. $row2["matchnumber"].'",';
+        $data2 = $data2 . '"Match '. 
+                 $row2["matchnumber"].'",';
     }
 
     //convert data in chart.js format
@@ -204,21 +203,24 @@ result.
     $data2 = trim($data2, ",");
      
     $output='
-    <div class="chart-container" style="height:80vh; width:50vw">    
+    <div class="chart-container" style="">    
     <canvas id="myChart"></canvas>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="Chart.min.js"></script>
     <script>
-    var ctx = document.getElementById("myChart").getContext("2d");
+
+    //myChart is a DOM element
+    var ctx = myChart.getContext("2d");
     var myChart = new Chart(ctx, {
         type: "line",
         data: {
             labels: ['.$data2.'],
             datasets: [{
-                label: "'.$con1." ".$con2." ".$con3.'",
+                label: "'.$con1." ".$con2." "
+                        .$con3.'",
                 data: ['.$data1.'],
-                backgroundColor:  "rgba(153, 102, 255, 1)",
-                borderColor:"rgba(54, 162, 235, 1)",
+                backgroundColor:  "black",
+                borderColor:"black",
                 borderWidth: 2,
                 pointBackgroundColor:"yellow"
             }]
@@ -276,16 +278,16 @@ value in that column so that it doesn't do anything in ranking. The code
 becomes this,
 
     //SQL query command
-    if($con1==""){
-        $con1="nothing";
+    if($con1 == ""){
+        $con1 = "nothing";
     }
-    if($con2==""){
-        $con2="nothing";
+    if($con2 == ""){
+        $con2 = "nothing";
     }
-    if($con3==""){
-        $con3="nothing";
+    if($con3 == ""){
+        $con3 = "nothing";
     }
-    $query = "SELECT * FROM teams ORDER BY `teams`.`$con1` DESC, `$con2` DESC, `$con3` DESC;";
+    $query = /* sql query statement */;
 
                 
 
@@ -293,18 +295,23 @@ After that, I used a `for loop` to generate HTML with data, which is
 also the result to `load_rank(con1,con2,con3)`.
 
     $output .= '</tr>';
-    while($rows = mysqli_fetch_array($result)){
+    $fetchArray = mysqli_fetch_array($result);
+    while($rows = $fetchArray){
         $output .= '<tr>';
         foreach ($final as $col_name){
             if($col_name == "teamnumber"){
-                $output .= '<th class="lock">'.$rows[$col_name].'</th>';
+                $output .= '<th class="lock">'.
+                            $rows[$col_name].
+                            '</th>';
                 $tnum = $rows[$col_name];
-                $sq = "SELECT * FROM matchperformance WHERE teamnumber='$tnum';";
-                $sqresult = mysqli_query($conn,$sq);
-                $ros = mysqli_num_rows($sqresult);
+                $sq = /* sql query statement */;
+                $qry = mysqli_query($conn, $sq);
+                $ros = mysqli_num_rows($qry);
             }else{
-                $in = (integer)$rows[$col_name]/$ros;
-                $output .= '<th class="normal">'.$in.'</th>';
+                $totalNum = $rows[$col_name];
+                $in = $totalNum / $ros;
+                $output .= '<th class="normal">'.
+                            $in.'</th>';
             }
         }
     $output .= '</tr>';
@@ -337,6 +344,8 @@ Here is the [code](https://github.com/robingan7/frcscouting.ga-Xcode).
 Xcode version of frcscouting.ga, basically displaying sub page of the
 website version in each tab. I didn't publish it because I didn't want
 to pay \$100 developer fee.
+
+![mobile version](https://robingan.org/images/project/frcscouting.ga/mobile%20version.png)
 
 #### [frc-scope.com](/project/#frc-scope.com)
 
